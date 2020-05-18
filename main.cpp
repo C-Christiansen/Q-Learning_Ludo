@@ -6,6 +6,7 @@
 #include "AI_player.h"
 #include "player_fast.h"
 #include "player_aggro_fast.h"
+#include "player_random_safe.h"
 #include <string>
 #include <vector>
 
@@ -23,21 +24,28 @@ int main()
 
     //Create players
     AI_player player_0;
+    //AI_player player_1;
+    //player_fast player_1;
+    //player_fast player_2;
+    //player_aggro_fast player_3;
+
+/*
+    AI_player player_0;
     player_aggro_fast player_1;
     player_fast player_2;
+    */
+    //player_fast player_3;
+
+    player_random player_1;
+    player_random player_2;
     player_random player_3;
-
-
-    //player_random player_1;
-    //player_random player_2;
-    //player_random player_3;
 
     //Play a game of Ludo
     game g(&player_0, &player_1, &player_2, &player_3);
     //g.play_game();
     //cout << "Player " << g.get_winner() << " won the game!" << endl << endl;
-
-    int play_games = 10000;
+    int iternations_played = 0;
+    int play_games = 100000;
     //Play many games of Ludo
     int wins[] = {0, 0, 0, 0};
     for(int i = 0; i < play_games; i++)
@@ -52,7 +60,11 @@ int main()
         myFile << wins[0] << ","<< wins[1] << ","<< wins[2] << ","<< wins[3]<< "\n";
         }
         int j = play_games - i;
-        cout << "missing games: " << j<< endl;
+
+        if (i == iternations_played + 1000){
+            iternations_played = i;
+            cout << "missing games: " << j<< endl;
+        }
 
     }
     for(int i = 0; i < 4; i++){

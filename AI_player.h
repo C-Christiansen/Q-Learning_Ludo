@@ -26,7 +26,7 @@ private:
     std::vector<std::vector<double>> q_table{8, std::vector<double>(232, 0)};
     std::vector<int> pos_end_of_turn = {-1, -1, -1, -1};
     int test = 0;
-    int iterations = 10000;
+    int iterations = 100000;
 
     int state =0;
     int action = 0;
@@ -36,10 +36,10 @@ private:
     double reward = 0;
     int game_won = 0;
 
-    bool training = false;
-    double EXPLORE_RATE = 0.0;
-    //bool training = true;
-    //double EXPLORE_RATE = 0.9;
+    //bool training = false;
+    //double EXPLORE_RATE = 0.0;
+    bool training = true;
+    double EXPLORE_RATE = 0.9;
     double EXPLORE_RATE_DECAY;
     double DISCOUNT_FACTOR = 0.4; //0.4
     double LEARNING_RATE = 0.2; //0.2
