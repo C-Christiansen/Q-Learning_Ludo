@@ -25,8 +25,8 @@ int main()
     //Create players
     AI_player player_0;
     //AI_player player_1;
-    //player_fast player_1;
-    //player_fast player_2;
+    player_aggro_fast player_1;
+    player_aggro_fast player_2;
     //player_aggro_fast player_3;
 
 /*
@@ -34,11 +34,11 @@ int main()
     player_aggro_fast player_1;
     player_fast player_2;
     */
-    //player_fast player_3;
+    player_aggro_fast player_3;
 
-    player_random player_1;
-    player_random player_2;
-    player_random player_3;
+    //player_random player_1;
+    //player_random player_2;
+    //player_random player_3;
 
     //Play a game of Ludo
     game g(&player_0, &player_1, &player_2, &player_3);

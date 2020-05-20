@@ -36,7 +36,7 @@ void AI_player::load_qtable() {
 
     std::vector<std::vector<double>> q_table_load;
      // Read file
-    ifstream file("../q_table_96000");
+    ifstream file("../Q_table_20000");
     if (file.is_open()) { // If file has correctly opened...
          // Output debug message
          cout << "File correctly opened" << endl;
@@ -256,7 +256,7 @@ void AI_player::you_won(bool has_won) {
             EXPLORE_RATE -= EXPLORE_RATE_DECAY;
         }
         games_played++;
-        reward -= 0;
+        reward -= 1;
     }
 
 
@@ -276,7 +276,7 @@ void AI_player::you_won(bool has_won) {
         test = games_played;
         //std::string filename = "../Qtable/q_table_" + std::to_string(games_played) + "_" + std::to_string(DISCOUNT_FACTOR) + "_" + std::to_string(LEARNING_RATE);
         std::string filename = "../Qtable/Q_table_" + std::to_string(games_played);
-        save_qtable(q_table, filename);
+        //save_qtable(q_table, filename);
         game_saved = true;
     }
 

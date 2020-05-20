@@ -36,13 +36,13 @@ private:
     double reward = 0;
     int game_won = 0;
 
-    //bool training = false;
-    //double EXPLORE_RATE = 0.0;
-    bool training = true;
-    double EXPLORE_RATE = 0.9;
+    bool training = false;
+    double EXPLORE_RATE = 0.0;
+    //bool training = true;
+    //double EXPLORE_RATE = 0.9;
     double EXPLORE_RATE_DECAY;
     double DISCOUNT_FACTOR = 0.4; //0.4
-    double LEARNING_RATE = 0.2; //0.2
+    double LEARNING_RATE = 0.9; //0.2
     std::string filename;
 
 
